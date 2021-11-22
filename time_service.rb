@@ -1,4 +1,4 @@
-require 'rack'
+# require 'rack'
 require 'hoodoo'
 
 
@@ -20,22 +20,22 @@ class TimeInterface < Hoodoo::Services::Interface
   end
 end
 
-# This is the service class.
-# It declares all the resource interfaces that exist within the service application.
-class TimeService < Hoodoo::Services::Service
-  comprised_of TimeInterface
-end
+# # This is the service class.
+# # It declares all the resource interfaces that exist within the service application.
+# class TimeService < Hoodoo::Services::Service
+#   comprised_of TimeInterface
+# end
 
-# This is a hack for the example and needed if you have Active Record present,
-# else Hoodoo will expect a database connection.
+# # This is a hack for the example and needed if you have Active Record present,
+# # else Hoodoo will expect a database connection.
 
-Object.send( :remove_const, :ActiveRecord ) rescue nil
+# Object.send( :remove_const, :ActiveRecord ) rescue nil
 
 
-# Tell rack to use the thin webserver on port 9292
-builder = Rack::Builder.new do
-  use( Hoodoo::Services::Middleware )
-  run( TimeService.new )
-end
+# # Tell rack to use the thin webserver on port 9292
+# builder = Rack::Builder.new do
+#   use( Hoodoo::Services::Middleware )
+#   run( TimeService.new )
+# end
 
-Rack::Handler::Thin.run( builder, :Port => 9292 )
+# Rack::Handler::Thin.run( builder, :Port => 9292 )

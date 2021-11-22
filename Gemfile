@@ -1,15 +1,15 @@
-  ruby   File.read('.ruby-version').chomp
-  source 'https://rubygems.org'
+ruby   File.read('.ruby-version').chomp
+source 'https://rubygems.org'
 
 # Fundamental architecture
 
-  gem 'rack'
-  gem 'hoodoo'
-  gem 'thin'
+gem 'rack'
+gem 'hoodoo'
+gem 'thin'
 
-  group :test do
+group :test do
 
-    gem 'rspec'
-    gem 'rack-test'
+  gem 'rspec'
+  gem 'rack-test'
 
-  end
+end
