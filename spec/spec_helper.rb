@@ -18,14 +18,11 @@ require 'rack/test'
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 #
-# Dir[ "#{ File.dirname( __FILE__ ) }/support/**/*.rb" ].sort.each { | f | require f }
-# require 'spec_support.rb'
-OUTER_APP = Rack::Builder.parse_file("config.ru").first
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
-  config.include Rack::Test::Methods
 
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
